@@ -3,6 +3,7 @@ using BulkyBook.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulkyBook.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231009164458_addProductsToDb")]
+    partial class addProductsToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,9 +91,6 @@ namespace BulkyBook.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("ListPrice")
-                        .HasColumnType("float");
-
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
@@ -115,7 +115,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Billy Spark",
                             Description = "Description",
                             ISBM = "SWD99901",
-                            ListPrice = 199.0,
                             Price = 99.0,
                             Price100 = 100.0,
                             Price50 = 66.0,
@@ -127,7 +126,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Alice Wonderland",
                             Description = "A thrilling adventure story",
                             ISBM = "ABC12345",
-                            ListPrice = 109.0,
                             Price = 59.990000000000002,
                             Price100 = 39.990000000000002,
                             Price50 = 45.990000000000002,
@@ -139,7 +137,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Chef Gordon Ramsay",
                             Description = "A cookbook for aspiring chefs",
                             ISBM = "XYZ67890",
-                            ListPrice = 399.0,
                             Price = 79.989999999999995,
                             Price100 = 59.990000000000002,
                             Price50 = 65.989999999999995,
@@ -151,7 +148,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Historian Jane Smith",
                             Description = "A journey through history",
                             ISBM = "DEF54321",
-                            ListPrice = 239.0,
                             Price = 49.990000000000002,
                             Price100 = 34.990000000000002,
                             Price50 = 39.990000000000002,
@@ -163,7 +159,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Dr. John Doe",
                             Description = "An introduction to science",
                             ISBM = "PQR98765",
-                            ListPrice = 189.0,
                             Price = 69.989999999999995,
                             Price100 = 49.990000000000002,
                             Price50 = 55.990000000000002,
