@@ -18,10 +18,7 @@ namespace BulkyBook.DataAccess.Repository
             _context = dbContext;
         }
 
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
+       
 
         public void Update(Category category)
         {
